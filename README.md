@@ -210,3 +210,95 @@ func main() {
 ```
 
 ``` `` ```內會保留原始字串
+
+## fmt.Scanf, fmt.Scan, fmt.Scanln
+
+讀取使用者輸入:
+
+```golang
+package main
+
+import "fmt"
+
+func main() {
+	var foo int
+	fmt.Print("Input a number: ")
+	fmt.Scanf("%d", &foo)
+
+	fmt.Printf("Your number is %d", foo)
+}
+```
+
+## fmt.Sprint, fmt.Sprintln, fmt.Sprintf
+
+```golang
+package main
+
+import "fmt"
+
+func main() {
+	foo := "Hello,"
+	bar := "World!"
+	a := fmt.Sprint(foo, bar)
+	b := fmt.Sprintln(foo, bar)
+	c := fmt.Sprintf("%s/%s", foo, bar)
+
+	fmt.Println(a) // Hello,World!
+	fmt.Println(b) // Hello, World!
+	               //
+	fmt.Println(c) // Hello,/World!
+}
+```
+
+## if statement
+
+```golang
+package main
+
+import "fmt"
+
+func main() {
+	foo := 10
+	if foo < 10 {
+		fmt.Println("To small")
+	} else if foo == 10 {
+		fmt.Println("Perfect!")
+	} else {
+		fmt.Println("To big")
+	}
+	// Perfect!
+}
+
+```
+
+## switch statement
+
+```golang
+package main
+
+import "fmt"
+
+func main() {
+	foo := 1
+	switch {
+	case foo == 1:
+		fmt.Println("Perfect!")
+	case foo == 2:
+		fmt.Println("Too big")
+	case foo == 0:
+		fmt.Println("To small")
+	}
+	// Perfect!
+	foo = 0
+	switch foo {
+	case 1:
+		fmt.Println("Perfect!")
+	case 2:
+		fmt.Println("Too big")
+	case 0:
+		fmt.Println("To small")
+	}
+	// To small
+}
+
+```
