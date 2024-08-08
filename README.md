@@ -123,3 +123,90 @@ func main() {
 	fmt.Println(A, B, C, D, E, F) // 10 5 2 1 0 0
 }
 ```
+
+## fmt套件
+
+幫助顯示輸出的內建套件
+
+### fmt.Printf
+
+格式化(format)，常用format如下:
+
+```golang
+package main
+
+import "fmt"
+
+var a int = 10
+var b string = "Hello"
+
+func main() {
+
+	fmt.Printf("a = %d\n", a)    // a = 10
+	fmt.Printf("b = %s\n", b)    // b = Hello
+	fmt.Printf("c = %c\n", b[0]) // c = H
+}
+```
+
+```golang
+package main
+
+import "fmt"
+
+type foo struct {
+	A string
+	B bool
+	C int
+}
+
+func main() {
+
+	fmt.Printf("foo = %v\n", foo{})  // foo = { false 0}
+	fmt.Printf("foo = %+v\n", foo{}) // foo = {A: B:false C:0}
+	fmt.Printf("foo = %#v\n", foo{}) // foo = main.foo{A:"", B:false, C:0}
+}
+```
+
+```v```專門用來查看物件結構
+
+### fmt.Print, fmt.Println
+
+有無換行的差別:
+
+```golang
+package main
+
+import "fmt"
+
+var foo string = "Hi"
+
+func main() {
+
+	fmt.Print(foo)
+	fmt.Println(foo)
+	fmt.Print(foo)
+
+	// HiHi
+	// Hi
+}
+
+```
+
+### `` vs ""
+
+```golang
+package main
+
+import "fmt"
+
+func main() {
+
+	fmt.Print("\n")
+	fmt.Print(`\n`)
+
+	//
+	// \n
+}
+```
+
+``` `` ```內會保留原始字串
