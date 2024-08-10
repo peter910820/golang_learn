@@ -302,3 +302,56 @@ func main() {
 }
 
 ```
+
+## for statement
+
+```golang
+package main
+
+import "fmt"
+
+func main() {
+	for i := 1; i < 10; i++ {
+		fmt.Println(i)
+	}
+}
+
+```
+淺顯易懂(X)
+
+## while statement(?)
+
+go 沒有 while，但可以用for做到while的樣子:
+
+```golang
+package main
+
+import "fmt"
+
+func main() {
+	i := 1
+	for i < 10 {
+		fmt.Println(i)
+		i++
+	}
+}
+
+```
+
+跟上面的程式碼等價
+
+## for range迭代
+
+```golang
+package main
+
+import "fmt"
+
+func main() {
+	foo := []string{"A", "B", "C"}
+	for index, f := range foo {
+		fmt.Printf("%d -> %s, ", index, f) // 0 -> A, 1 -> B, 2 -> C,
+	}
+}
+
+```
